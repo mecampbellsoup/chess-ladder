@@ -1,0 +1,27 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/matthewcampbell/Sites/code/labs/chess-ladder/app/models/challenge.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewcampbell/Sites/code/labs/chess-ladder/app/models/player.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1384282892
+  }
+}
