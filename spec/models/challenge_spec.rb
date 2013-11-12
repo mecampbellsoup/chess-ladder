@@ -9,12 +9,25 @@ describe Challenge do
   before :each do
     player.update(:ranking => 1)
     player2.update(:ranking => 5)
+    challenge.update(:winner => player2, :loser => player)
   end
 
   it "should have a winner and a loser" do
-    challenge.winner = player
-    challenge.loser = player2
-    expect(challenge.winner_id).to eq(player.id)
-    expect(challenge.loser_id).to eq(player2.id)
+    expect(challenge.winner_id).to eq(player2.id)
+    expect(challenge.loser_id).to eq(player.id)
   end
+
+  context "a new game has been played and will be saved" do
+    it "should swap rankings if the winner has a lower ranking than the loser" do
+      expect(player.ranking).to eq(5)
+      expect(player2.ranking).to eq(1)
+    end
+
+    it "should not swap rankings if the winner is ranked higher" do
+      challenge.update(:winner => player, :loser => player2)
+      expect(player.ranking).to eq(1)
+      expect(player2.ranking).to eq(5)
+    end
+  end
+
 end

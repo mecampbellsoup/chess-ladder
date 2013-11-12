@@ -1,4 +1,5 @@
 ChessLadder::Application.routes.draw do
+  
   resources :challenges
 
   resources :players
