@@ -1,4 +1,4 @@
-<h1>Listing challenges</h1>
+<h1>History of Battle</h1>
 
 <table>
   <thead>
@@ -14,8 +14,8 @@
   <tbody>
     <% @challenges.each do |challenge| %>
       <tr>
-        <td><%= challenge.winner %></td>
-        <td><%= challenge.loser %></td>
+        <td><%= challenge.winner.name %></td>
+        <td><%= challenge.loser.name %></td>
         <td><%= link_to 'Show', challenge %></td>
         <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
         <td><%= link_to 'Destroy', challenge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,3 +27,4 @@
 <br>
 
 <%= link_to 'New Challenge', new_challenge_path %>
+<%= link_to 'New Player', new_player_path %>

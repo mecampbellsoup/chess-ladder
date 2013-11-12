@@ -2,12 +2,12 @@
 
 <p>
   <strong>Winner:</strong>
-  <%= @challenge.winner %>
+  <%= @challenge.winner.name %>
 </p>
 
 <p>
   <strong>Loser:</strong>
-  <%= @challenge.loser %>
+  <%= @challenge.loser.name %>
 </p>
 
 <%= link_to 'Edit', edit_challenge_path(@challenge) %> |

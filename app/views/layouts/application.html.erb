@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ChessLadder</title>
+  <title>Flatiron ChessLadder</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<nav>
+  <%= link_to "Players", players_path %> | 
+  <%= link_to "Challenges", challenges_path %>
+</nav>
 <%= yield %>
 
 </body>

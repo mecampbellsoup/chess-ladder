@@ -9,6 +9,7 @@ class Challenge < ActiveRecord::Base
 
   def check_player_rankings
     if winner.ranking > loser.ranking
+      # larger ranking means lower on the ladder, duh
       Player.swap_rankings!(winner,loser)
     end
   end

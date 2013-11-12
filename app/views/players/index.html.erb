@@ -5,8 +5,8 @@
     <tr>
       <th>Name</th>
       <th>Ranking</th>
-      <th></th>
-      <th></th>
+      <th>Wins</th>
+      <th>Losses</th>
       <th></th>
     </tr>
   </thead>
@@ -16,6 +16,8 @@
       <tr>
         <td><%= player.name %></td>
         <td><%= player.ranking %></td>
+        <td><%= player.wins.count %></td>
+        <td><%= player.losses.count %></td>
         <td><%= link_to 'Show', player %></td>
         <td><%= link_to 'Edit', edit_player_path(player) %></td>
         <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +28,5 @@
 
 <br>
 
+<%= link_to 'New Challenge', new_challenge_path %>
 <%= link_to 'New Player', new_player_path %>

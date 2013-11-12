@@ -30,4 +30,8 @@ describe Challenge do
     end
   end
 
+  context "new challenges should change the rankings" do
+    it ""
+  end
+
 end
