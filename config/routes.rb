@@ -5,6 +5,7 @@ ChessLadder::Application.routes.draw do
 
   resources :players
 
+  root 'timer#new'
   get '/timer', to: 'timer#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
