@@ -29,6 +29,7 @@ $(document).ready(function() {
             $('body').unbind('click');
         } else if (player1value <= 0) {
             clearIntervals();
+            $('#hidden_redirect').toggleClass('hidden');
             $('body').unbind('click');
             // call a function which POSTs data
             // passing in the winner and the loser
