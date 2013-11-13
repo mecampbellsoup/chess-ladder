@@ -15,8 +15,8 @@ class Challenge < ActiveRecord::Base
   end
 
   def change_elo_rankings
-    w = Elo::Player.new(:rating => winner.elo)
-    l = Elo::Player.new(:rating => loser.elo)
+    w = Elo::Player.new(:rating => winner.elo, :games_played => winner.games_played)
+    l = Elo::Player.new(:rating => loser.elo, :games_played => loser.games_played)
     w.wins_from(l)
 
     winner.elo = w.rating

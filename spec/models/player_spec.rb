@@ -27,6 +27,11 @@ describe Player do
     expect(player.losses).to include(challenge)
   end
 
+  it "knows how many games it has played" do 
+    challenge.update(:winner => player, :loser => player2)
+    expect(player.games_played).to eq(1)
+  end
+
   it "has a default elo ranking of 1500 from before_create hook" do 
     expect(player.elo).to eq(1500)
   end
@@ -37,8 +42,9 @@ describe Player do
     expect(player.elo).to eq(2000)
   end
 
-  it "players created before ELO ranking return a default of 1500" do 
+  it "has a rating of 1500 if it was created before ELO implementation" do 
     player.elo = nil # approximation, to get around before_create hook
     expect(player.elo).to eq(1500)
   end
+
 end

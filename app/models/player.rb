@@ -11,6 +11,10 @@ class Player < ActiveRecord::Base
     p2.update(:ranking => top)
   end
 
+  def games_played
+    self.wins.count + self.losses.count
+  end
+  
   # player#elo is called on before_create, but
   # needs necessary logic such that players created
   # before the database the introduction of ELO ratings
@@ -18,5 +22,6 @@ class Player < ActiveRecord::Base
   def elo
     self.read_attribute(:elo) || self.elo = 1500
   end
+
 
 end
