@@ -11,11 +11,11 @@ function formatTime(num) {
 var opps = {
     "player1": {
         "count": null,
-        "value": 1
+        "value": 300
     },
     "player2": {
         "count": null,
-        "value": 1
+        "value": 300
     }
 }
 
