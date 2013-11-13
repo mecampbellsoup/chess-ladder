@@ -1,10 +1,8 @@
 <div class="playerTimeDisplay">
-Player 1: <h1 id="player1" class="time"></h1><br><br>
-Player 2: <h1 id="player2" class="time"></h1><br><br>
+<h1 id="player1" class="time"></h1><br>
+<h1 id="player2" class="time"></h1><br><br>
 </div>
 
-  <div id="hidden_redirect" class="hidden">
-    <%= link_to "Who won?", new_challenge_path %>
+  <div id="hidden_redirect" class="hidden alert alert-success">
+    <%= link_to "The game is over! Record who won", new_challenge_path %>
   </div>
- 
-</div>

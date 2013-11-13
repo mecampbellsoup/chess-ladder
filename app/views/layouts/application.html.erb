@@ -2,16 +2,23 @@
 <html>
 <head>
   <title>Flatiron ChessLadder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav>
-  <%= link_to "Players", players_path %> | 
-  <%= link_to "Challenges", challenges_path %>
-</nav>
-<%= yield %>
+<div class="container">
+
+  <nav class="text-center">
+    <%= link_to "Players", players_path %> | 
+    <%= link_to "Challenges", challenges_path %> |
+    <%= link_to "Record a game", new_challenge_path %>
+
+  </nav>
+  <%= yield %>
+</div>
 
 </body>
 </html>

@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.playerTimeDisplay {
+  text-align: center;
+}
 .hidden {
   display:none;
+}
+
+.time {
+  font-size: 100px;
+}
+
+#player1 {
+  -webkit-transform: rotate(180deg);
+}
+
+a:hover {
+  background-color: white;
 }

@@ -11,11 +11,11 @@ function formatTime(num) {
 var opps = {
     "player1": {
         "count": null,
-        "value": 300
+        "value": 1
     },
     "player2": {
         "count": null,
-        "value": 300
+        "value": 1
     }
 }
 
@@ -53,8 +53,7 @@ $(document).ready(function() {
         /*
         opponent = jquery object
         o = value "player1" or "player2", so you can use
-            opps[o]
-        so you can use opps[o] to play with the object 
+            opps[o] to play with the object 
 
         */
         clearIntervals();
