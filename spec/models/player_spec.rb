@@ -27,16 +27,18 @@ describe Player do
     expect(player.losses).to include(challenge)
   end
 
-  it "has a default elo ranking of 1500" do 
+  it "has a default elo ranking of 1500 from before_create hook" do 
     expect(player.elo).to eq(1500)
   end
 
-  it "returns its elo ranking it if exists" do 
+  it "returns its elo ranking" do 
     player.elo = 2000
     player.save
     expect(player.elo).to eq(2000)
   end
 
-  it "should be able to rank all players by ranking" do
+  it "players created before ELO ranking return a default of 1500" do 
+    player.elo = nil # approximation, to get around before_create hook
+    expect(player.elo).to eq(1500)
   end
 end
