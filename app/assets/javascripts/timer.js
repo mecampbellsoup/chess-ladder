@@ -49,7 +49,14 @@ $(document).ready(function() {
  
     function playerClick() {
         var opponent = getOpponent(this);
-        var o = opponent[0].id;
+        var o = opponent[0].id; 
+        /*
+        opponent = jquery object
+        o = value "player1" or "player2", so you can use
+            opps[o]
+        so you can use opps[o] to play with the object 
+
+        */
         clearIntervals();
 
         $('.time').unbind('click');
