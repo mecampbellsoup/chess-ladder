@@ -27,6 +27,16 @@ describe Player do
     expect(player.losses).to include(challenge)
   end
 
+  it "has a default elo ranking of 1500" do 
+    expect(player.elo).to eq(1500)
+  end
+
+  it "returns its elo ranking it if exists" do 
+    player.elo = 2000
+    player.save
+    expect(player.elo).to eq(2000)
+  end
+
   it "should be able to rank all players by ranking" do
   end
 end

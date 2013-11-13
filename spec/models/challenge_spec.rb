@@ -30,8 +30,14 @@ describe Challenge do
     end
   end
 
-  context "new challenges should change the rankings" do
-    it ""
+  context "elo ranking" do 
+    it "player 2's elo ranking rises when s/he wins" do 
+      expect(player2.elo).to be > 1500
+    end
+
+    it "player 1's elo ranking falls when s/he wins" do 
+      expect(player.elo).to be < 1500
+    end
   end
 
 end
