@@ -9,21 +9,26 @@ function formatTime(num) {
     return time;
 };
 
+var opps = {
+    "player1": {
+        "count": null,
+        "value": 5
+    },
+    "player2": {
+        "count": null,
+        "value": 5
+    }
+}
+
 $(document).ready(function() { 
-    
-    var Opponents = [$('#player1time'), $('#player2time')];
-          
-    var interval = 1000,
-        player1count = null,
-        player2count = null,
-        player1value = 5,
-        player2value = 5;
- 
-    $("#player1time").html(formatTime(player1value));
-    $("#player2time").html(formatTime(player2value));
+              
+    var interval = 1000;
+
+    $("#player1").html(formatTime(opps.player1.value));
+    $("#player2").html(formatTime(opps.player2.value));
     
     function checkGameTime() {
-        if (player1value <= 0 || player2value <= 0) {
+        if (opps.player1.value <= 0 || opps.player2.value <= 0) {
             gameEnded();
         }
     }
@@ -35,41 +40,33 @@ $(document).ready(function() {
     }
     
     function clearIntervals() {
-         clearInterval(player1count);
-         clearInterval(player2count); 
+         clearInterval(opps.player1.count);
+         clearInterval(opps.player2.count); 
     }
     
     function getOpponent(object) {
-        if (object == Opponents[0][0]) {
-           return Opponents[1][0];
+        if (object.id == "player1") {
+            return $('#player2');
         } else {
-           return Opponents[0][0];
+            return $('#player1');
         }
     }
-    
-    $('#player1time').bind('click', playerOneClicked);
-    $('#player2time').bind('click', playerTwoClicked);
  
-    function playerOneClicked() {
-        $(this).unbind('click');
-        $('#player2time').bind('click', playerTwoClicked);
+    function playerClick() {
+        var opponent = getOpponent(this);
+        var o = opponent[0].id;
         clearIntervals();
-        player2count = setInterval(function() {
-            player2value -= 1;
+
+        $('.time').unbind('click');
+        opponent.bind('click', playerClick);
+
+        opps[o].count = setInterval(function() {
+            opps[o].value =  opps[o].value - 1,
             checkGameTime();
-            $('#player2time').html(formatTime(player2value));
+            opponent.html(formatTime(opps[o].value));
         }, interval);
     }
-    
-    function playerTwoClicked() {
-        $(this).unbind('click');
-        $('#player1time').bind('click', playerOneClicked);
-        clearIntervals();
-        player1count = setInterval(function() {
-            player1value -= 1;
-            checkGameTime();
-            $('#player1time').html(formatTime(player1value));
-        }, interval);
-    }
-   
+
+    $('.time').bind('click', playerClick);
+
 });
