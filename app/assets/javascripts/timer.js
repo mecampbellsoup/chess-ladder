@@ -16,8 +16,8 @@ $(document).ready(function() {
     var interval = 1000,
         player1count = null,
         player2count = null,
-        player1value = 10,
-        player2value = 10;
+        player1value = 5,
+        player2value = 5;
  
     $("#player1time").html(formatTime(player1value));
     $("#player2time").html(formatTime(player2value));
@@ -55,8 +55,8 @@ $(document).ready(function() {
         $('#player2time').bind('click', playerTwoClicked);
         clearIntervals();
         player2count = setInterval(function() {
-            checkGameTime();
             player2value -= 1;
+            checkGameTime();
             $('#player2time').html(formatTime(player2value));
         }, interval);
     }
@@ -66,8 +66,8 @@ $(document).ready(function() {
         $('#player1time').bind('click', playerOneClicked);
         clearIntervals();
         player1count = setInterval(function() {
-            checkGameTime();
             player1value -= 1;
+            checkGameTime();
             $('#player1time').html(formatTime(player1value));
         }, interval);
     }
