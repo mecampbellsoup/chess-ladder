@@ -31,6 +31,14 @@ namespace :deploy do
     run "cd #{current_path} && RAILS_ENV=production bundle exec rake db:migrate"
   end
 
+  task  :seed, :roles => :app do
+    run "cd #{current_path} && RAILS_ENV=production bundle exec rake db:seed"
+  end
+
+  task :reset, :roles => :app do
+    run "cd #{current_path} && RAILS_ENV=production bundle exec rake db:reset"
+  end
+
   task :start do; end
   task :stop do; end
   task :restart, :roles => :app, :except => { :no_release => true } do

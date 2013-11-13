@@ -18,9 +18,9 @@ Player.create([
                 { :name => "Scott",     :ranking => 4 }
               ])
 
-Challenge.create([
-                  { :winner_id => 8, :loser_id => 1 },
-                  { :winner_id => 7, :loser_id => 2 },
-                  { :winner_id => 6, :loser_id => 3 },
-                  { :winner_id => 5, :loser_id => 4 }
-                 ])
+# Challenge.create([
+#                   { :winner_id => 8, :loser_id => 1 },
+#                   { :winner_id => 7, :loser_id => 2 },
+#                   { :winner_id => 6, :loser_id => 3 },
+#                   { :winner_id => 5, :loser_id => 4 }
+#                  ])
