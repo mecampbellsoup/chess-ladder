@@ -22,10 +22,6 @@ var opps = {
 
 $(document).ready(function() { 
               
-    var interval = 1000;
-
-    $("#player1").html(formatTime(opps.player1.value));
-    $("#player2").html(formatTime(opps.player2.value));
     
     function checkGameTime() {
         if (opps.player1.value <= 0 || opps.player2.value <= 0) {
@@ -36,7 +32,7 @@ $(document).ready(function() {
     function gameEnded() {
         clearIntervals();
         $('#hidden_redirect').toggleClass('hidden');
-        $('body').unbind('click');       
+        $('.time').unbind('click');       
     }
     
     function clearIntervals() {
@@ -44,8 +40,8 @@ $(document).ready(function() {
          clearInterval(opps.player2.count); 
     }
     
-    function getOpponent(object) {
-        if (object.id == "player1") {
+    function getOpponent(player) {
+        if (player.id == "player1") {
             return $('#player2');
         } else {
             return $('#player1');
@@ -64,9 +60,11 @@ $(document).ready(function() {
             opps[o].value =  opps[o].value - 1,
             checkGameTime();
             opponent.html(formatTime(opps[o].value));
-        }, interval);
+        }, 1000);
     }
 
+    $("#player1").html(formatTime(opps.player1.value));
+    $("#player2").html(formatTime(opps.player2.value));
     $('.time').bind('click', playerClick);
 
 });
