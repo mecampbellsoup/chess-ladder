@@ -22,12 +22,16 @@ $(document).ready(function() {
     $("#player1time").html(formatTime(player1value));
     $("#player2time").html(formatTime(player2value));
     
-    function isGameOver() {
+    function checkGameTime() {
         if (player1value <= 0 || player2value <= 0) {
-            clearIntervals();
-            $('#hidden_redirect').toggleClass('hidden');
-            $('body').unbind('click');
+            gameEnded();
         }
+    }
+
+    function gameEnded() {
+        clearIntervals();
+        $('#hidden_redirect').toggleClass('hidden');
+        $('body').unbind('click');       
     }
     
     function clearIntervals() {
@@ -51,7 +55,7 @@ $(document).ready(function() {
         $('#player2time').bind('click', playerTwoClicked);
         clearIntervals();
         player2count = setInterval(function() {
-            isGameOver();
+            checkGameTime();
             player2value -= 1;
             $('#player2time').html(formatTime(player2value));
         }, interval);
@@ -62,7 +66,7 @@ $(document).ready(function() {
         $('#player1time').bind('click', playerOneClicked);
         clearIntervals();
         player1count = setInterval(function() {
-            isGameOver();
+            checkGameTime();
             player1value -= 1;
             $('#player1time').html(formatTime(player1value));
         }, interval);
