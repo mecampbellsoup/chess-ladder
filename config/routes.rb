@@ -1,8 +1,11 @@
 ChessLadder::Application.routes.draw do
   
+  get "timer/new"
   resources :challenges
 
   resources :players
+
+  get '/timer', to: 'timer#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
