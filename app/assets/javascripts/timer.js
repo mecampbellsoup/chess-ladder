@@ -6,21 +6,28 @@ function formatTime(num) {
     if (seconds < 10) {seconds = "0"+seconds;}
     var time    = minutes+':'+seconds;
     return time;
-};
-
-var opps = {
-    "player1": {
-        "count": null,
-        "value": 300
-    },
-    "player2": {
-        "count": null,
-        "value": 300
-    }
 }
 
+
+    $('#gameModes').change(function() {
+        var gameModeLength = $(this).find(":selected").val();
+    });
+    
+
 $(document).ready(function() { 
-              
+    
+    var gameModeLength = $( "#gameModes option:selected" ).val();
+
+    var opps = {
+        "player1": {
+            "count": null,
+            "value": gameModeLength
+        },
+        "player2": {
+            "count": null,
+            "value": gameModeLength
+        }
+    };
     
     function checkGameTime() {
         if (opps.player1.value <= 0 || opps.player2.value <= 0) {
