@@ -26,10 +26,11 @@ $(document).ready(function() {
     $('#gameModes').change(function() {
         var g = $(this).find( ":selected" ).val();
         gameModeLength = parseInt(g);
-        //need on the coming lines to redraw the html based on changes to opps var
+        //next redraw the html based on changes to opps var
         $("#player1").html(formatTime(gameModeLength));
-        debugger;
         $("#player2").html(formatTime(gameModeLength));
+        opps.player1.value = gameModeLength;
+        opps.player2.value = gameModeLength;
     });
    
     
@@ -68,14 +69,14 @@ $(document).ready(function() {
         opponent.bind('click', playerClick);
 
         opps[o].count = setInterval(function() {
-            opps[o].value =  opps[o].value - 1,
+            opps[o].value -= 1,
             checkGameTime();
             opponent.html(formatTime(opps[o].value));
         }, 1000);
     }
 
-    $("#player1").html(formatTime(opps.player1.value));
-    $("#player2").html(formatTime(opps.player2.value));
+    $("#player1").html(formatTime(gameModeLength));
+    $("#player2").html(formatTime(gameModeLength));
     $('.time').bind('click', playerClick);
 
 });
