@@ -50,7 +50,7 @@ $(document).ready(function() {
          clearInterval(opps.player1.count);
          clearInterval(opps.player2.count); 
     }
-    
+
     function getOpponent(player) {
         var p = (player.id == "player1") ?  $('#player2') : $('#player1');
         return p;
@@ -58,20 +58,15 @@ $(document).ready(function() {
  
     function playerClick() {
         var opponent = getOpponent(this);
-        var o = opponent[0].id; 
-        /*
-        opponent = jquery object
-        o = value "player1" or "player2", so you can use
-            opps[o] to play with the object 
+        var o = opps[opponent[0].id]; //opps object
 
-        */
         clearAndUnbind();
         opponent.bind('click', playerClick);
 
-        opps[o].count = setInterval(function() {
-            opps[o].value -= 1,
+        o.count = setInterval(function() {
+            o.value -= 1,
             checkGameTime();
-            opponent.html(formatTime(opps[o].value));
+            opponent.html(formatTime(o.value));
         }, 1000);
     }
 
