@@ -14,6 +14,7 @@ class ChallengesController < ApplicationController
 
   # GET /challenges/new
   def new
+    @new_page = true
     @challenge = Challenge.new
   end
 

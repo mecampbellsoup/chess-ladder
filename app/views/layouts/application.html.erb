@@ -3,7 +3,8 @@
 <head>
   <title>Flatiron ChessLadder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -12,9 +13,10 @@
 <div class="container">
 
   <nav class="text-center">
-    <%= link_to "Players", players_path %> | 
-    <%= link_to "Challenges", challenges_path %> |
-    <%= link_to "Record a game", new_challenge_path %>
+    <%= link_to "Ladder Rankings", players_path %>
+    <%= link_to " | Battle History", challenges_path %>
+    <%= link_to " | Game Timer", timer_path %>
+    <%= link_to " | Record an Outcome", new_challenge_path unless @new_page %>
 
   </nav>
   <%= yield %>

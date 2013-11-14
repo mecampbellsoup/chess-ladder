@@ -9,13 +9,13 @@ describe Player do
   before :each do
     player.ranking = 1
     player.save
-    player2.ranking = 5
+    player2.ranking = 2
     player2.save
   end
 
   it "should have a method that swaps ranks" do
     subject.class.swap_rankings!(player, player2)
-    expect(player.ranking).to eq(5)
+    expect(player.ranking).to eq(2)
     expect(player2.ranking).to eq(1)
   end
 
@@ -45,6 +45,11 @@ describe Player do
   it "has a rating of 1500 if it was created before ELO implementation" do 
     player.elo = nil # approximation, to get around before_create hook
     expect(player.elo).to eq(1500)
+  end
+
+  it "is created with the lowest ranking" do
+    player3 = Player.create
+    expect(player3.ranking).to eq(3)
   end
 
 end

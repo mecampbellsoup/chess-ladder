@@ -5,7 +5,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Ranking</th>
+      <th>Current Rank</th>
       <th>ELO</th>
       <th>Wins</th>
       <th>Losses</th>
@@ -29,7 +29,5 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'Start New Challenge!', timer_path %> | 
-<%= link_to 'Record a Challenge', new_challenge_path %>
+<%= link_to 'New Challenge | ', new_challenge_path %>
+<%= link_to 'New Player', new_player_path %>

@@ -22,8 +22,11 @@
     <% players_array = Player.all.map { |player| [player.name, player.id] } %>
     <%= f.select :loser_id, options_for_select(players_array), :prompt => 'Select One' %>
   </div>
+  <br />
 
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  <br />
 <% end %>

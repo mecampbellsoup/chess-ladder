@@ -2,7 +2,7 @@ class Player < ActiveRecord::Base
   has_many :wins,   foreign_key: :winner_id, class_name: "Challenge"
   has_many :losses, foreign_key: :loser_id,  class_name: "Challenge"
 
-  before_create :elo
+  before_create :elo, :assign_ranking
   
   def self.swap_rankings!(p1, p2)
     top = p1.ranking
@@ -21,6 +21,10 @@ class Player < ActiveRecord::Base
   # have an ELO ranking by default
   def elo
     self.read_attribute(:elo) || self.elo = 1500
+  end
+
+  def assign_ranking
+    self.ranking = Player.maximum(:ranking) ? Player.maximum(:ranking) + 1 : 1
   end
 
 
