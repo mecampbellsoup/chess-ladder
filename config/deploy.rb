@@ -23,18 +23,22 @@ before "deploy:restart", "deploy:symlink_database"
 # these http://github.com/rails/irs_process_scripts
 
 namespace :deploy do
+  desc "Symlink the local database to production serve"
   task :symlink_database, :roles => :app do
     run "ln -nfs #{shared_path}/production.sqlite3 #{current_path}/db/production.sqlite3"
   end
 
+  desc "Invoke pending migrations in production database"
   task :migrate, :roles => :app do
     run "cd #{current_path} && RAILS_ENV=production bundle exec rake db:migrate"
   end
 
+  desc "Seed the production database"
   task  :seed, :roles => :app do
     run "cd #{current_path} && RAILS_ENV=production bundle exec rake db:seed"
   end
 
+  desc "Reset production DB (equiv to migrate + seed)"
   task :reset, :roles => :app do
     run "cd #{current_path} && RAILS_ENV=production bundle exec rake db:reset"
   end
