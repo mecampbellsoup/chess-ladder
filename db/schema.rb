@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113195205) do
+ActiveRecord::Schema.define(version: 20131114225929) do
 
   create_table "challenges", force: true do |t|
     t.integer  "winner_id"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20131113195205) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "elo"
+    t.string   "email"
+    t.string   "password_digest"
   end
 
 end

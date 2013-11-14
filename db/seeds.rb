@@ -8,19 +8,14 @@
 
 
 Player.create([
-                { :name => "Matt",      :ranking => 7 },
-                { :name => "Patches",   :ranking => 5 },
-                { :name => "Sam Owens", :ranking => 3 },
-                { :name => "Creee",     :ranking => 2 },
-                { :name => "Spangler",  :ranking => 1 },
-                { :name => "James",     :ranking => 6 },
-                { :name => "Logan",     :ranking => 8 },
-                { :name => "Scott",     :ranking => 4 }
-              ])
+  
+  { :name => "Matt",      :ranking => 7, :email => "matthew.campbell@flatironschool.com" },
+  { :name => "Patrick",   :ranking => 5, :email => "patrick.janson@flatironschool.com" },
+  { :name => "Sam Owens", :ranking => 3, :email => "samuel.owens@flatironschool.com" },
+  { :name => "Chris Lee", :ranking => 2, :email => "christopher.lee@flatironschool.com" },
+  { :name => "Spangler",  :ranking => 1, :email => "michael.spangler@flatironschool.com" },
+  { :name => "James",     :ranking => 6, :email => "james.tong@flatironschool.com" },
+  { :name => "Logan",     :ranking => 8, :email => "logan.hasson@flatironschool.com" },
+  { :name => "Scott",     :ranking => 4, :email => "scott.luptowski@flatironschool.com" }
 
-# Challenge.create([
-#                   { :winner_id => 8, :loser_id => 1 },
-#                   { :winner_id => 7, :loser_id => 2 },
-#                   { :winner_id => 6, :loser_id => 3 },
-#                   { :winner_id => 5, :loser_id => 4 }
-#                  ])
+])

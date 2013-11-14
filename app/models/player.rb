@@ -1,4 +1,6 @@
 class Player < ActiveRecord::Base
+  attr_accessor :password
+
   has_many :wins,   foreign_key: :winner_id, class_name: "Challenge"
   has_many :losses, foreign_key: :loser_id,  class_name: "Challenge"
 
