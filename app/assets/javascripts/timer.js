@@ -40,11 +40,8 @@ $(document).ready(function() {
     }
     
     function getOpponent(player) {
-        if (player.id == "player1") {
-            return $('#player2');
-        } else {
-            return $('#player1');
-        }
+        var p = (player.id == "player1") ?  $('#player2') : $('#player1');
+        return p;
     }
  
     function playerClick() {
