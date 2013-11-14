@@ -30,7 +30,6 @@ $(document).ready(function() {
         $("#player1").html(formatTime(gameModeLength));
         debugger;
         $("#player2").html(formatTime(gameModeLength));
-        alert(gameModeLength);
     });
    
     
