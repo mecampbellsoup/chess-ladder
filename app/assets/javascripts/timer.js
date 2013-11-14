@@ -29,12 +29,12 @@ $(document).ready(function() {
     }
 
     function gameEnded() {
-        clearIntervals();
+        clearAndUnbind();
         $('#hidden_redirect').toggleClass('hidden');
-        $('.time').unbind('click');       
     }
     
-    function clearIntervals() {
+    function clearAndUnbind() {
+        $('.time').unbind('click');
          clearInterval(opps.player1.count);
          clearInterval(opps.player2.count); 
     }
@@ -56,9 +56,7 @@ $(document).ready(function() {
             opps[o] to play with the object 
 
         */
-        clearIntervals();
-
-        $('.time').unbind('click');
+        clearAndUnbind();
         opponent.bind('click', playerClick);
 
         opps[o].count = setInterval(function() {
