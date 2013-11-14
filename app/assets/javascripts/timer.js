@@ -1,4 +1,6 @@
-function formatTime(num) {
+$(document).ready(function() { 
+    
+    function formatTime(num) {
     var sec_num = parseInt(num, 10); 
     var minutes = Math.floor(sec_num / 60);
     var seconds = sec_num - (minutes * 60);
@@ -8,16 +10,8 @@ function formatTime(num) {
     return time;
 }
 
-
-    $('#gameModes').change(function() {
-        var gameModeLength = $(this).find(":selected").val();
-    });
+    var gameModeLength = 300;
     
-
-$(document).ready(function() { 
-    
-    var gameModeLength = $( "#gameModes option:selected" ).val();
-
     var opps = {
         "player1": {
             "count": null,
@@ -28,6 +22,17 @@ $(document).ready(function() {
             "value": gameModeLength
         }
     };
+    
+    $('#gameModes').change(function() {
+        var g = $(this).find( ":selected" ).val();
+        gameModeLength = parseInt(g);
+        //need on the coming lines to redraw the html based on changes to opps var
+        $("#player1").html(formatTime(gameModeLength));
+        debugger;
+        $("#player2").html(formatTime(gameModeLength));
+        alert(gameModeLength);
+    });
+   
     
     function checkGameTime() {
         if (opps.player1.value <= 0 || opps.player2.value <= 0) {
