@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :player do
-    name "MyString"
-    ranking 1
+    name "Scott"
+    ranking 1500
   end
 end
