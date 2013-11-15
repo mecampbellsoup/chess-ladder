@@ -4,7 +4,7 @@ ChessLadder::Application.routes.draw do
 
   resources :players
 
-  root 'players#index'
+  root 'timer#new'
   get '/timer', to: 'timer#new'
 
   get '/login', to: 'sessions#new'
