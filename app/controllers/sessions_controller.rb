@@ -5,11 +5,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(:email => params[:email])
-    if user && user.authenticate(params[:password])
-      login(user.id)
-      redirect_to root_path
+    player = Player.find_by(:email => params[:email])
+    if player && player.authenticate(params[:password])
+      login(player.id)
+      redirect_to(root_path, :notice => "Successfully logged in!")
     else
+      flash[:error] = "Something went wrong - try again please"
       render :new
     end
   end

@@ -1,12 +1,16 @@
-<h1>Login using Flatiron School email</h1>
+<% if flash[:error] %>
+  <br><p class="alert alert-danger"><%= flash[:error] %></p>
+<% end %>
+
+<h1>Welcome to the Flatiron ChessLadder</h1>
 <br />
 
 <%= form_tag(sessions_path) do %>
 
   <%= label_tag :email %>
-  <%= text_field_tag :email %>
+  <%= text_field_tag :email %><br>
   <%= label_tag :password %>
-  <%= password_field_tag :password %>
+  <%= password_field_tag :password %><br>
   <%= submit_tag "Login!" %>
 
 <% end %>

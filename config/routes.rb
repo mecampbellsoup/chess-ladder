@@ -1,8 +1,5 @@
 ChessLadder::Application.routes.draw do
   
-  get "sessions/new"
-  get "sessions/create"
-  get "timer/new"
   resources :challenges
 
   resources :players

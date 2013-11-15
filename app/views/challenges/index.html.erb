@@ -5,6 +5,7 @@
     <tr>
       <th>Winner</th>
       <th>Loser</th>
+      <th>Date Played</th>
       <th></th>
       <th></th>
     </tr>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= challenge.winner.name %></td>
         <td><%= challenge.loser.name %></td>
+        <td><%= challenge.created_at %></td>
         <td><%= link_to 'Edit Result', edit_challenge_path(challenge) %></td>
         <td><%= link_to 'Destroy Record', challenge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
