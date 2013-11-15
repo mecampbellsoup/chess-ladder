@@ -1,7 +1,19 @@
-<br>
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+
 <h1>Flatiron Ladder</h1>
-<p class='header'><%= "Ladder rules?" %></p>
+
+<div id="clickRules">Click to toggle ladder rules!</div>
+
+<div id="hiddenRules">
+  <ol class="list-style">
+    <li>Any player can challenge a player above him or her on the ladder.</li>
+    <li>If the lower-placed player wins the match, then the two players swap places on the ladder.</li>
+    <li>If the lower-placed player loses, then he or she may not challenge the same person again without challenging someone else first.</li>
+    <li>There is no limit as to how many rungs above themselves players may challenge.</li>
+  </ol>
+</div>
 
 <table class="table table-striped">
   <thead>
