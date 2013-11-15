@@ -1,12 +1,3 @@
-<div class="playerTimeDisplay">
-  <h1 id="player1" class="time"></h1><br>
-  <h1 id="player2" class="time"></h1><br><br>
-</div>
-
-<div id="hidden_redirect" class="hidden alert alert-success">
-  <%= link_to "The game is over! Record who won", new_challenge_path %>
-</div>
-
 <div class="centered">
 <select id="gameModes">
   <option selected disabled>Choose game mode</option>
@@ -14,4 +5,13 @@
   <option value="900">Traditional</option>
   <option value="300">Normal</option>
 </select>
+</div>
+<br><br><br>
+<div class="playerTimeDisplay">
+  <h1 id="player1" class="time timer-waiting"></h1><br>
+  <h1 id="player2" class="time timer-waiting"></h1><br><br>
+</div>
+
+<div id="hidden_redirect" class="hidden alert alert-success">
+  <%= link_to "The game is over! Record who won", new_challenge_path %>
 </div>

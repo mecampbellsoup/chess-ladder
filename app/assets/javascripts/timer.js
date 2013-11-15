@@ -1,14 +1,14 @@
 $(document).ready(function() { 
     
     function formatTime(num) {
-    var sec_num = parseInt(num, 10); 
-    var minutes = Math.floor(sec_num / 60);
-    var seconds = sec_num - (minutes * 60);
+        var sec_num = parseInt(num, 10); 
+        var minutes = Math.floor(sec_num / 60);
+        var seconds = sec_num - (minutes * 60);
 
-    if (seconds < 10) {seconds = "0"+seconds;}
-    var time    = minutes+':'+seconds;
-    return time;
-}
+        if (seconds < 10) {seconds = "0"+seconds;}
+        var time    = minutes+':'+seconds;
+        return time;
+    }
 
     var gameModeLength = 300;
     
@@ -55,11 +55,18 @@ $(document).ready(function() {
         var p = (player.id == "player1") ?  $('#player2') : $('#player1');
         return p;
     }
+
+    function reverseColors(player,opponent) {
+        $('.time').removeClass('timer-counting timer-counting');
+        $(player).addClass('timer-waiting');
+        opponent.addClass('timer-counting');
+    }
  
     function playerClick() {
         var opponent = getOpponent(this);
         var o = opps[opponent[0].id]; //opps object
-
+        
+        reverseColors(this, opponent);
         clearAndUnbind();
         opponent.bind('click', playerClick);
 
@@ -73,5 +80,4 @@ $(document).ready(function() {
     $("#player1").html(formatTime(gameModeLength));
     $("#player2").html(formatTime(gameModeLength));
     $('.time').bind('click', playerClick);
-
 });
