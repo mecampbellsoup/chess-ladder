@@ -1,6 +1,5 @@
 <div class="centered">
-<select id="gameModes">
-  <option selected disabled>Choose game mode</option>
+<select id="gameModes"><br>
   <option value="180">Bullet</option>
   <option value="900">Traditional</option>
   <option value="300">Normal</option>
@@ -15,3 +14,9 @@
 <div id="hidden_redirect" class="hidden alert alert-success">
   <%= link_to "The game is over! Record who won", new_challenge_path %>
 </div>
+
+<style>
+.ui-mobile {
+  display: none !important;
+}
+</style>

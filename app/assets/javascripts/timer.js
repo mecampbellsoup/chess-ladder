@@ -46,7 +46,7 @@ $(document).ready(function() {
     }
     
     function clearAndUnbind() {
-        $('.time').unbind('click');
+        $('.time').off('click tap swipe');
          clearInterval(opps.player1.count);
          clearInterval(opps.player2.count); 
     }
@@ -65,10 +65,10 @@ $(document).ready(function() {
     function playerClick() {
         var opponent = getOpponent(this);
         var o = opps[opponent[0].id]; //opps object
-        
+
         reverseColors(this, opponent);
         clearAndUnbind();
-        opponent.bind('click', playerClick);
+        opponent.on('click tap swipe', playerClick);
 
         o.count = setInterval(function() {
             o.value -= 1,
@@ -79,5 +79,5 @@ $(document).ready(function() {
 
     $("#player1").html(formatTime(gameModeLength));
     $("#player2").html(formatTime(gameModeLength));
-    $('.time').bind('click', playerClick);
+    $('.time').on('click tap swipe', playerClick);
 });
