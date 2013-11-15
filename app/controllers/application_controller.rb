@@ -19,12 +19,12 @@ class ApplicationController < ActionController::Base
     helper_method :logged_in?
 
     def current_user
-      @current_user ||= Player.find_by(:email => session[:email]) if session[:email]
+      @current_user ||= Player.find(session[:user_id]) if session[:user_id]
     end
     helper_method :current_user
 
-    def login(email)
-      session[:email] = email
+    def login(id)
+      session[:user_id] = id
     end
 
 end

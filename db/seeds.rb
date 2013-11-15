@@ -9,13 +9,13 @@
 
 Player.create([
   
-  { :name => "Matt",      :ranking => 7, :email => "matthew.campbell@flatironschool.com" },
-  { :name => "Patrick",   :ranking => 5, :email => "patrick.janson@flatironschool.com" },
-  { :name => "Sam Owens", :ranking => 3, :email => "samuel.owens@flatironschool.com" },
-  { :name => "Chris Lee", :ranking => 2, :email => "christopher.lee@flatironschool.com" },
-  { :name => "Spangler",  :ranking => 1, :email => "michael.spangler@flatironschool.com" },
-  { :name => "James",     :ranking => 6, :email => "james.tong@flatironschool.com" },
-  { :name => "Logan",     :ranking => 8, :email => "logan.hasson@flatironschool.com" },
-  { :name => "Scott",     :ranking => 4, :email => "scott.luptowski@flatironschool.com" }
+  { :name => "Matt",      :ranking => 7, :password => 'flatironruby003', :password_confirmation => 'flatironruby003', :email => "matthew.campbell@flatironschool.com" },
+  { :name => "Patrick",   :ranking => 5, :password => 'flatironruby003', :password_confirmation => 'flatironruby003', :email => "patrick.janson@flatironschool.com" },
+  { :name => "Sam Owens", :ranking => 3, :password => 'flatironruby003', :password_confirmation => 'flatironruby003', :email => "samuel.owens@flatironschool.com" },
+  { :name => "Chris Lee", :ranking => 2, :password => 'flatironruby003', :password_confirmation => 'flatironruby003', :email => "christopher.lee@flatironschool.com" },
+  { :name => "Spangler",  :ranking => 1, :password => 'flatironruby003', :password_confirmation => 'flatironruby003', :email => "michael.spangler@flatironschool.com" },
+  { :name => "James",     :ranking => 6, :password => 'flatironruby003', :password_confirmation => 'flatironruby003', :email => "james.tong@flatironschool.com" },
+  { :name => "Logan",     :ranking => 8, :password => 'flatironruby003', :password_confirmation => 'flatironruby003', :email => "logan.hasson@flatironschool.com" },
+  { :name => "Scott",     :ranking => 4, :password => 'flatironruby003', :password_confirmation => 'flatironruby003', :email => "scott.luptowski@flatironschool.com" }
 
 ])

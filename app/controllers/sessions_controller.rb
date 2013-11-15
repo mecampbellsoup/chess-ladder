@@ -5,9 +5,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    login(params[:email])
-
-    redirect_to root_path
+    user = User.find_by(:email => params[:email])
+    if user && user.authenticate(params[:password])
+      login(user.id)
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def destroy
