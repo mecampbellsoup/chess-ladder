@@ -19,10 +19,10 @@
     <% else %>
       <%= link_to "Login", login_path %>
     <% end %>
-      <%= link_to " | Ladder Rankings", players_path %>
-      <%= link_to " | Battle History", challenges_path %>
-      <%= link_to " | Game Timer", timer_path %>
-      <%= link_to " | Record an Outcome",new_challenge_path unless @new_page %>
+       | <%= link_to "Ladder Rankings", players_path %>
+       | <%= link_to "Battle History", challenges_path %>
+       | <%= link_to "Game Timer", timer_path %>
+       | <%= link_to "Record an Outcome",new_challenge_path unless @new_page %>
   </nav>
   <br />
   <%= yield %>

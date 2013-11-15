@@ -7,10 +7,8 @@ describe Player do
   let(:challenge) { Challenge.new }
 
   before :each do
-    player.ranking = 1
-    player.save
-    player2.ranking = 2
-    player2.save
+    player.update(:email => "player@email.com", :password => "test", :password_confirmation => "test")
+    player2.update(:email => "player2@email.com", :password => "test", :password_confirmation => "test")
   end
 
   it "should have a method that swaps ranks" do
@@ -47,8 +45,8 @@ describe Player do
     expect(player.elo).to eq(1500)
   end
 
-  it "is created with the lowest ranking" do
-    player3 = Player.create
+  it "is initialized with the lowest ranking" do
+    player3 = Player.new
     expect(player3.ranking).to eq(3)
   end
 

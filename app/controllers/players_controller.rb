@@ -28,6 +28,9 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       if @player.save
+        # Tell the UserMailer to send a welcome Email after save
+        PlayerMailer.welcome_email(@player).deliver
+
         format.html { redirect_to @player, notice: 'Player was successfully created.' }
         format.json { render action: 'show', status: :created, location: @player }
       else

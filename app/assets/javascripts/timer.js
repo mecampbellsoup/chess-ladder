@@ -1,7 +1,7 @@
-$(document).ready(function() { 
+$(document).ready(function() {
     
     function formatTime(num) {
-        var sec_num = parseInt(num, 10); 
+        var sec_num = parseInt(num, 10);
         var minutes = Math.floor(sec_num / 60);
         var seconds = sec_num - (minutes * 60);
 
@@ -10,7 +10,7 @@ $(document).ready(function() {
         return time;
     }
 
-    var gameModeLength = 300;
+    var gameModeLength = 180;
     
     var opps = {
         "player1": {
@@ -25,7 +25,7 @@ $(document).ready(function() {
     
     $('#gameModes').change(function() {
         var g = $(this).find( ":selected" ).val();
-        gameModeLength = parseInt(g);
+        gameModeLength = parseInt(g, 10);
         //next redraw the html based on changes to opps var
         $("#player1").html(formatTime(gameModeLength));
         $("#player2").html(formatTime(gameModeLength));
@@ -48,7 +48,7 @@ $(document).ready(function() {
     function clearAndUnbind() {
         $('.time').off('click tap swipe');
          clearInterval(opps.player1.count);
-         clearInterval(opps.player2.count); 
+         clearInterval(opps.player2.count);
     }
 
     function getOpponent(player) {

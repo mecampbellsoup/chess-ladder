@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <h1>Welcome to the Flatiron Chess Club, <%= @player.name %></h1>
+    <p>
+      You have successfully signed up,
+      your user email is: <%= @player.email %> and your password is 'flatiron'.<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+    <p>Now go challenge and climb the ladder!</p>
+  </body>
+</html>

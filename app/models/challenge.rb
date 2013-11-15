@@ -1,4 +1,5 @@
 class Challenge < ActiveRecord::Base
+  validate :winner_and_loser_cannot_be_equal
   
   before_save :check_player_rankings, :change_elo_rankings
 
@@ -24,4 +25,9 @@ class Challenge < ActiveRecord::Base
     loser.elo = l.rating
     loser.save
   end
+
+  private
+    def winner_and_loser_cannot_be_equal
+      @errors.add(:base, "The winner & loser cannot be the same player!") if self.winner === self.loser
+    end
 end
