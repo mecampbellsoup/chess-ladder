@@ -57,7 +57,7 @@ $(document).ready(function() {
     }
 
     function reverseColors(player,opponent) {
-        $('.time').removeClass('timer-counting timer-counting');
+        $('.time').removeClass('timer-counting');
         $(player).addClass('timer-waiting');
         opponent.addClass('timer-counting');
     }
