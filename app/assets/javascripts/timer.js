@@ -34,13 +34,17 @@ $(document).ready(function() {
     });
 
     $('#pauseTimer').click(function() {
-        clearAndUnbind();
+        clearInterval(opps.player1.count);
+        clearInterval(opps.player2.count);
     });
    
     $('#resetTimer').click(function() {
-        gameEnded();
+        clearInterval(opps.player1.count);
+        clearInterval(opps.player2.count);
         $("#player1").html(formatTime(gameModeLength));
         $("#player2").html(formatTime(gameModeLength));
+        opps.player1.value = gameModeLength;
+        opps.player2.value = gameModeLength;
     });
     
     function checkGameTime() {
@@ -74,7 +78,6 @@ $(document).ready(function() {
     function playerClick() {
         var opponent = getOpponent(this);
         var o = opps[opponent[0].id]; //opps object
-
         reverseColors(this, opponent);
         clearAndUnbind();
         opponent.on('click tap swipe', playerClick);
