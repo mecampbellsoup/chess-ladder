@@ -1,4 +1,6 @@
-<p class="alert alert-success"><%= notice %></p>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
 
 <p>
   <strong>Name:</strong>
@@ -21,4 +23,4 @@
 </p>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
+<%= link_to 'View Ladder', players_path %>

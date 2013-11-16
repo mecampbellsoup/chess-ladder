@@ -24,7 +24,6 @@ class PlayersController < ApplicationController
   # POST /players
   # POST /players.json
   def create
-    binding.pry 
     @player = Player.new(player_params)
 
     respond_to do |format|
@@ -73,6 +72,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:name, :ranking)
+      params.require(:player).permit(:name, :ranking, :email, :password, :password_confirmation)
     end
 end
