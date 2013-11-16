@@ -32,7 +32,16 @@ $(document).ready(function() {
         opps.player1.value = gameModeLength;
         opps.player2.value = gameModeLength;
     });
+
+    $('#pauseTimer').click(function() {
+        clearAndUnbind();
+    });
    
+    $('#resetTimer').click(function() {
+        gameEnded();
+        $("#player1").html(formatTime(gameModeLength));
+        $("#player2").html(formatTime(gameModeLength));
+    });
     
     function checkGameTime() {
         if (opps.player1.value <= 0 || opps.player2.value <= 0) {

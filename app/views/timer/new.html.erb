@@ -1,15 +1,22 @@
-<div class="centered">
-<select id="gameModes"><br>
-  <option value="180">Breakneck</option>
-  <option value="300">Rapid</option>
-  <option value="450">Classic</option>
-  <option value="900">Traditional</option>
-</select>
+  <div class="centered">
+  <select id="gameModes" autofocus="autofocus"><br>
+    <option value="180">Breakneck</option>
+    <option value="300">Rapid</option>
+    <option value="450">Classic</option>
+    <option value="900">Traditional</option>
+  </select>
 </div>
-<br><br><br>
+
+
+<br>
 <div class="playerTimeDisplay">
   <h1 id="player1" class="time timer-waiting"></h1><br>
   <h1 id="player2" class="time timer-waiting"></h1><br><br>
+</div>
+
+<div class='centered'>
+  <button id='pauseTimer' type="button" class="btn btn-primary">Pause Timer</button>
+  <button id='resetTimer' type="button" class="btn btn-danger">Reset Timer</button>
 </div>
 
 <div id="hidden_redirect" class="hidden alert alert-success">
