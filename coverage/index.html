@@ -14,7 +14,7 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-11-15T15:05:03-05:00">2013-11-15T15:05:03-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-11-15T18:29:40-05:00">2013-11-15T18:29:40-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.97
+         5.34
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>20</td>
         <td>20</td>
         <td>0</td>
-        <td>1.5</td>
+        <td>4.2</td>
       </tr>
       
       <tr>
@@ -67,7 +67,7 @@
         <td>18</td>
         <td>18</td>
         <td>0</td>
-        <td>4.6</td>
+        <td>6.6</td>
       </tr>
       
     </tbody>
@@ -120,7 +120,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.97
+         5.34
        </span>
     </span> hits/line)
   </h2>
@@ -152,7 +152,7 @@
         <td>20</td>
         <td>20</td>
         <td>0</td>
-        <td>1.5</td>
+        <td>4.2</td>
       </tr>
       
       <tr>
@@ -162,7 +162,7 @@
         <td>18</td>
         <td>18</td>
         <td>0</td>
-        <td>4.6</td>
+        <td>6.6</td>
       </tr>
       
     </tbody>
@@ -371,8 +371,8 @@
           <code class="ruby">  def check_player_rankings</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="12">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="12">
+          <span class="hits">7</span>
           
           <code class="ruby">    if winner.ranking &gt; loser.ranking</code>
         </li>
@@ -383,8 +383,8 @@
           <code class="ruby">      # larger ranking means lower on the ladder, duh</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="14">
+          <span class="hits">7</span>
           
           <code class="ruby">      Player.swap_rankings!(winner,loser)</code>
         </li>
@@ -413,20 +413,20 @@
           <code class="ruby">  def change_elo_rankings</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="19">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="19">
+          <span class="hits">7</span>
           
           <code class="ruby">    w = Elo::Player.new(:rating =&gt; winner.elo, :games_played =&gt; winner.games_played)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="20">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="20">
+          <span class="hits">7</span>
           
           <code class="ruby">    l = Elo::Player.new(:rating =&gt; loser.elo, :games_played =&gt; loser.games_played)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="21">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="21">
+          <span class="hits">7</span>
           
           <code class="ruby">    w.wins_from(l)</code>
         </li>
@@ -437,26 +437,26 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="23">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="23">
+          <span class="hits">7</span>
           
           <code class="ruby">    winner.elo = w.rating</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="24">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="24">
+          <span class="hits">7</span>
           
           <code class="ruby">    winner.save</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="25">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="25">
+          <span class="hits">7</span>
           
           <code class="ruby">    loser.elo = l.rating</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="26">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="26">
+          <span class="hits">7</span>
           
           <code class="ruby">    loser.save</code>
         </li>
@@ -485,8 +485,8 @@
           <code class="ruby">    def winner_and_loser_cannot_be_equal</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="31">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="10" data-linenumber="31">
+          <span class="hits">10</span>
           
           <code class="ruby">      @errors.add(:base, &quot;The winner &amp; loser cannot be the same player!&quot;) if self.winner === self.loser</code>
         </li>
@@ -593,26 +593,26 @@
           <code class="ruby">  def self.swap_rankings!(p1, p2)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="13">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="13">
+          <span class="hits">7</span>
           
           <code class="ruby">    top = p1.ranking</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="14">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="14">
+          <span class="hits">7</span>
           
           <code class="ruby">    bottom = p2.ranking</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="15">
+          <span class="hits">7</span>
           
           <code class="ruby">    p1.update(:ranking =&gt; bottom)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="16">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="7" data-linenumber="16">
+          <span class="hits">7</span>
           
           <code class="ruby">    p2.update(:ranking =&gt; top)</code>
         </li>
@@ -635,8 +635,8 @@
           <code class="ruby">  def games_played</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="20">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="14" data-linenumber="20">
+          <span class="hits">14</span>
           
           <code class="ruby">    self.wins.count + self.losses.count</code>
         </li>
@@ -683,8 +683,8 @@
           <code class="ruby">  def elo</code>
         </li>
       
-        <li class="covered" data-hits="42" data-linenumber="28">
-          <span class="hits">42</span>
+        <li class="covered" data-hits="54" data-linenumber="28">
+          <span class="hits">54</span>
           
           <code class="ruby">    self.read_attribute(:elo) || self.elo = 1500</code>
         </li>
@@ -707,8 +707,8 @@
           <code class="ruby">  def assign_ranking</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="32">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="12" data-linenumber="32">
+          <span class="hits">12</span>
           
           <code class="ruby">    self.ranking = Player.maximum(:ranking) ? Player.maximum(:ranking) + 1 : 1</code>
         </li>
