@@ -47,6 +47,7 @@ describe Player do
 
   it "is initialized with the lowest ranking" do
     player3 = Player.new
+    player3.update(:email => "player3@email.com", :password => "test", :password_confirmation => "test")
     expect(player3.ranking).to eq(3)
   end
 

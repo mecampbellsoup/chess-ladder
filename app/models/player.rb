@@ -7,7 +7,7 @@ class Player < ActiveRecord::Base
 
   has_secure_password
   
-  after_initialize :elo, :assign_ranking
+  before_create :elo, :assign_ranking
   
   def self.swap_rankings!(p1, p2)
     top = p1.ranking
