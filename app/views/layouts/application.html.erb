@@ -12,31 +12,41 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" align="center">
-      <% if logged_in? %>
-        Logged in as: <%= current_user.name %> | <%= link_to "Logout", logout_path %>
-      <% else %>
+    <% if logged_in? %>
+      <button type="button" class="btn btn-default navbar-btn" data-toggle="collapse">
+        Logged in as: <strong><%= current_user.name %></strong> | <%= link_to "Logout", logout_path %>
+    <% else %>
         <%= link_to "Login", login_path %>
-      <% end %>
-    </button>
-    <button type="button" class="navbar-toggle" data-toggle="collapse" align="center">
-       <%= link_to "Ladder Rankings", players_path %>
-    </button>
+      </button>
+    <% end %>
 
-    <button type="button" class="navbar-toggle" data-toggle="collapse" align="center">
-       <%= link_to "Battle History", challenges_path %>
-    </button>
+    <% unless @current_path.match(players_path) %>
+      <button type="button" class="btn btn-default navbar-btn" data-toggle="collapse" align="center">
+         <%= link_to "Ladder Rankings", players_path %>
+      </button>
+    <% end %>
 
-    <button type="button" class="navbar-toggle" data-toggle="collapse" align="center">
-      <%= link_to "Game Timer", timer_path %>
-    </button>
+    <% unless @current_path.match(timer_path) %>
+      <button type="button" class="btn btn-default navbar-btn" data-toggle="collapse" align="center">
+         <%= link_to "Game Timer", timer_path %>
+      </button>
+    <% end %>
 
-    <button type="button" class="navbar-toggle" data-toggle="collapse" align="center">
-      <%= link_to "Record an Outcome",new_challenge_path unless @new_page %>
-    </button>  
+    <% unless @current_path.match(challenges_path) %>
+      <button type="button" class="btn btn-default navbar-btn" data-toggle="collapse" align="center">
+         <%= link_to "Battle History", challenges_path %>
+      </button>
+    <% end %>
+
+    <% unless @current_path.match(new_challenge_path) %>
+      <button type="button" class="btn btn-default navbar-btn" data-toggle="collapse" align="center">
+         <%= link_to "Record an Outcome", new_challenge_path %>
+      </button>
+    <% end %>
+
   </div>
 </nav>
 

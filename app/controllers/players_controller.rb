@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
+  before_action :set_current_url
 
   # GET /players
   # GET /players.json
@@ -65,6 +66,11 @@ class PlayersController < ApplicationController
   end
 
   private
+
+    def set_current_url
+      @current_path = request.path
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_player
       @player = Player.find(params[:id])

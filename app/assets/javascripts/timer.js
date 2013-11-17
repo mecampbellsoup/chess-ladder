@@ -26,6 +26,7 @@ $(document).ready(function() {
     $('#gameModes').change(function() {
         var g = $(this).find( ":selected" ).val();
         gameModeLength = parseInt(g, 10);
+        
         //next redraw the html based on changes to opps var
         $("#player1").html(formatTime(gameModeLength));
         $("#player2").html(formatTime(gameModeLength));

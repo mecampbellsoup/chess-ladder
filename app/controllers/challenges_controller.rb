@@ -1,5 +1,6 @@
 class ChallengesController < ApplicationController
   before_action :set_challenge, only: [:show, :edit, :update, :destroy]
+  before_action :set_current_url
 
   # GET /challenges
   # GET /challenges.json
@@ -14,7 +15,6 @@ class ChallengesController < ApplicationController
 
   # GET /challenges/new
   def new
-    @new_page = true
     @challenge = Challenge.new
   end
 
@@ -63,6 +63,11 @@ class ChallengesController < ApplicationController
   end
 
   private
+
+    def set_current_url
+      @current_path = request.path
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_challenge
       @challenge = Challenge.find(params[:id])
