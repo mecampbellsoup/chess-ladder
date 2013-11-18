@@ -26,8 +26,7 @@ class Challenge < ActiveRecord::Base
     loser.save
   end
 
-  private
-    def winner_and_loser_cannot_be_equal
-      @errors.add(:base, "The winner & loser cannot be the same player!") if self.winner === self.loser
-    end
+  def winner_and_loser_cannot_be_equal
+    @errors.add(:base, "The winner & loser cannot be the same player!") if self.winner === self.loser
+  end
 end

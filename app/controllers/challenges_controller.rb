@@ -25,6 +25,7 @@ class ChallengesController < ApplicationController
   # POST /challenges
   # POST /challenges.json
   def create
+    binding.pry
     @challenge = Challenge.new(challenge_params)
 
     respond_to do |format|
@@ -55,6 +56,7 @@ class ChallengesController < ApplicationController
   # DELETE /challenges/1
   # DELETE /challenges/1.json
   def destroy
+    binding.pry
     @challenge.destroy
     respond_to do |format|
       format.html { redirect_to challenges_url }
@@ -75,6 +77,6 @@ class ChallengesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def challenge_params
-      params.require(:challenge).permit(:winner_id, :loser_id)
+      params.require(:challenge).permit(:winner_id, :loser_id, :date_played)
     end
 end

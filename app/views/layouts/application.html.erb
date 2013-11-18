@@ -35,13 +35,13 @@
       </button>
     <% end %>
 
-    <% unless @current_path.match(challenges_path) %>
+    <% unless @current_path == challenges_path %>
       <button type="button" class="btn btn-default navbar-btn" data-toggle="collapse" align="center">
          <%= link_to "Battle History", challenges_path %>
       </button>
     <% end %>
 
-    <% unless @current_path.match(new_challenge_path) %>
+    <% unless @current_path == new_challenge_path %>
       <button type="button" class="btn btn-default navbar-btn" data-toggle="collapse" align="center">
          <%= link_to "Record an Outcome", new_challenge_path %>
       </button>
